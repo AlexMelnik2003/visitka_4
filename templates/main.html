@@ -23,11 +23,33 @@
         <img src="{% static 'logo.png' %}" alt="Гид" class="guide-photo">
         <div class="intro-text">
             <h2>Добро пожаловать!</h2>
-            <p>Меня зовут Андрей, и я ваш гид по прекрасному Казахстану. Я покажу вам самые интересные и захватывающие
-                места, расскажу о богатой истории и культуре нашей страны.</p>
+            <p>Меня зовут Андрей, и я ваш гид по загадочному и невероятному Мангистау. Я покажу вам самые интересные и захватывающие места, расскажу о богатой истории и культуре нашей страны. У меня очень большой опыт.</p>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tourButtons = document.querySelectorAll('.tour-btn');
+        const tourInfos = document.querySelectorAll('.tour-info');
+
+        tourButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTour = button.getAttribute('data-tour');
+
+                tourInfos.forEach(info => {
+                    if (info.id === targetTour) {
+                        info.style.display = info.style.display === 'block' ? 'none' : 'block';
+                    } else {
+                        info.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
 <section class="slider">
     <h2>Наши туры</h2>
     <div class="swiper-container">
@@ -100,6 +122,183 @@
         <!-- <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div> -->
     </div>
+    <section class="tours">
+    <h2>Туры</h2>
+    <div class="tour-buttons">
+        <button class="tour-btn" data-tour="2days1">Двухдневный тур 1</button>
+        <button class="tour-btn" data-tour="2days2">Двухдневный тур 2</button>
+        <button class="tour-btn" data-tour="3days">Трехдневный тур</button>
+        <button class="tour-btn" data-tour="4days">Четырехдневный тур</button>
+        <button class="tour-btn" data-tour="5days">Пятидневный тур</button>
+        <button class="tour-btn" data-tour="9days">Девятидневный тур</button>
+    </div>
+    <div class="tour-info" id="2days1">
+        <h3>Двухдневный тур 1</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Долина Камней (Торыш)</li>
+            <li>Кок Кала</li>
+            <li>Гора Шеркала</li>
+            <li>Долина замков Айракты (ночь) можно в когез</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Взъерошенный черный каньон (Пестроцветы)</li>
+            <li>Сор Тузбаир</li>
+        </ul>
+    </div>
+    <div class="tour-info" id="2days2">
+        <h3>Двухдневный тур 2</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Долина Камней (Торыш)</li>
+            <li>Кок Кала</li>
+            <li>Гора Шеркала</li>
+            <li>Долина замков Айракты (ночь) можно в когез</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Кызылкуп</li>
+            <li>Босжира</li>
+        </ul>
+    </div>
+    <div class="tour-info" id="3days">
+        <h3>Трехдневный тур</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Долина Камней (Торыш)</li>
+            <li>Кок Кала</li>
+            <li>Гора Шеркала</li>
+            <li>Долина замков Айракты (ночь) можно в когез</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Взъерошенный черный каньон (Пестроцветы)</li>
+            <li>Тузбаир (ночь)</li>
+        </ul>
+        <p>3 день</p>
+        <ul>
+            <li>Босжира</li>
+            <li>Кызылкуп</li>
+        </ul>
+    </div>
+    <div class="tour-info" id="4days">
+        <h3>Четырехдневный тур</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Провал Жыгылган</li>
+            <li>Каньон Капамсай</li>
+            <li>Скальная мечеть Шакпак Ата (ночлег) можно в визит центре Сартас</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Ущелье Шакпактасай</li>
+            <li>Долина Камней (Торыш)</li>
+            <li>Кок Кала</li>
+            <li>Гора Шеркала</li>
+            <li>Долина замков Айракты (ночь) можно в когез</li>
+        </ul>
+        <p>3 день</p>
+        <ul>
+            <li>Тузбаир (ночь)</li>
+        </ul>
+        <p>4 день</p>
+        <ul>
+            <li>Босжира</li>
+            <li>Кызылкуп</li>
+        </ul>
+    </div>
+    <div class="tour-info" id="5days">
+        <h3>Пятидневный тур</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Кызылкуп</li>
+            <li>Бокты</li>
+            <li>Босжира (ночь)</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Панорама Бекет-Ата</li>
+            <li>Тузбаир (ночь)</li>
+        </ul>
+        <p>3 день</p>
+        <ul>
+            <li>Взъерошанный Каньон</li>
+            <li>Подземная мечеть Караман-Ата</li>
+            <li>Ыбыктысай (Ажурный Каньон)</li>
+            <li>Когез (ночь)</li>
+        </ul>
+        <p>4 день</p>
+        <ul>
+            <li>Долина замков Айракты</li>
+            <li>Гора Шеркала</li>
+            <li>Кок Кала</li>
+            <li>Долина Камней (Торыш) (ночь в палатках или центр Сартас)</li>
+        </ul>
+        <p>5 день</p>
+        <ul>
+            <li>Мечеть Шакпак Ата</li>
+            <li>Каньон Капамсай</li>
+            <li>Провал Жыгылган</li>
+        </ul>
+    </div>
+    <div class="tour-info" id="9days">
+        <h3>Девятидневный тур</h3>
+        <p>1 день</p>
+        <ul>
+            <li>Провал Жыгылган</li>
+            <li>Каньон Капамсай</li>
+            <li>Скальная мечеть Шакпак Ата (ночлег) можно визит центр Сартас</li>
+        </ul>
+        <p>2 день</p>
+        <ul>
+            <li>Ущелье Шакпактасай</li>
+            <li>Долина Камней</li>
+            <li>Кок Кала</li>
+            <li>Гора Шеркала</li>
+            <li>Долина замков Айракты (ночь) можно в когез</li>
+        </ul>
+        <p>3 день</p>
+        <ul>
+            <li>Тузбаир (ночь)</li>
+        </ul>
+        <p>4 день</p>
+        <ul>
+            <li>Гора Найзатау</li>
+            <li>Панорама мечети Бекет Ата</li>
+            <li>Босжира (ночь)</li>
+        </ul>
+        <p>5 день</p>
+        <ul>
+            <li>Панорамы Босжира (ночь)</li>
+        </ul>
+        <p>6 день</p>
+        <ul>
+            <li>Кызылкуп (ночь)</li>
+        </ul>
+        <p>6 день</p>
+        <ul>
+            <li>Кызылкуп (ночь)</li>
+        </ul>
+        <p>7 день</p>
+        <ul>
+            <li>Бокты (ночь)</li>
+        </ul>
+        <p>8 день</p>
+        <ul>
+            <li>Караман-Ата</li>
+            <li>Ыбыктысай (Ажурный каньон)</li>
+            <li>Когез (ночь)</li>
+        </ul>
+        <p>9 день</p>
+        <ul>
+            <li>Долина замков Айракты</li>
+            <li>Гора Шеркала</li>
+            <li>Кок Кала</li>
+            <li>Долина Камней (Торыш)</li>
+        </ul>
+    </div>
+</section>
 </section>
 
 <section class="gallery">
@@ -129,7 +328,7 @@
     </div>
     <div class="faq-item">
         <h3>Где мы будем ночевать? Как будет организовано питание? <span class="toggle">+</span></h3>
-        <p class="answer">Мы организуем размещение в лучших гостиницах и предоставляем питание в местных ресторанах.</p>
+        <p class="answer">Мы организуем размещение в лучших гостиницах и предоставляем питание в местных ресторанах. В нашем туре комфортный палаточный кемпинг и этно деревня.</p>
     </div>
     <div class="faq-item">
         <h3>Что взять с собой? <span class="toggle">+</span></h3>
@@ -149,7 +348,7 @@
     <h2>Свяжитесь со мной</h2>
     <p>Чтобы узнать больше о Мангистау и запланировать путешествие, свяжитесь со мной:</p>
     <p>Телефон: +7 705 344 6624</p>
-    <p>Email: mangistau.explorer@gmail.com</p>
+    <p>Email: dondronz@mail.ru</p>
     <div class="social-icons">
         <!-- <a href="https://www.facebook.com" target="_blank"> -->
         <!--     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" -->
